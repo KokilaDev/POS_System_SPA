@@ -3,8 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <title>POS-System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<!-- Login Section -->
+<div class="login">
+    <div class="wrap" id="wrap">
+        <form id="login-form">
+            <h1>Login</h1>
+            <div class="input-box">
+                <input type="text" placeholder="Username" required id="username">
+                <i class="fa-solid fa-user"></i>
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="Password" required id="password">
+                <i class="fa-solid fa-lock"></i>
+            </div>
+            <div class="container">
+                <label><input type="checkbox"> Remember me</label>
+                <a href="#">Forgot Password?</a>
+            </div>
+            <button type="submit" class="btn" id="btn">Login</button>
+            <div class="register">
+                <p>Don't have an account? <a href="#">Register</a></p>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- POS Section -->
+<div id="pos-section" class="pos-section">
+    <h1>Welcome to POS Dashboard</h1>
+    <p>This is my pos system main page</p>
+</div>
+
+<script src="asset/lib/jquery-3.7.1.min.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
