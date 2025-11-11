@@ -1,3 +1,4 @@
+// ====== Login ======
 $('#login-form').on('submit', function (event) {
     event.preventDefault();
 
@@ -34,3 +35,30 @@ logoutBtn.addEventListener('click', () => {
     $('#pos-section').hide();
     alert('Logged out!');
 });
+
+// ====== Tab Navigation ======
+const tabs = {
+    dashboard: '#dashboard_content',
+    customer: '#customer_content',
+    product: '#product_content',
+    cart: '#cart_content',
+    order: '#order_content'
+};
+
+$('.tab-content').hide();
+$('#dashboard_content').show();
+// loadRecentOrders(); // load table on start
+
+$('#dashboard_tab').on('click', function () { showTab('dashboard'); });
+$('#customer_tab').on('click', function () { showTab('customer'); });
+$('#product_tab').on('click', function () { showTab('product'); });
+$('#cart_tab').on('click', function () { showTab('cart'); });
+$('#order_tab').on('click', function () { showTab('order'); });
+
+function showTab(tabName) {
+    $('.tab-content').hide();
+    $(tabs[tabName]).show();
+
+    $('.sidebar-nav-item').removeClass('active');
+    $(`#${tabName}_tab`).addClass('active');
+}
