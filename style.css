@@ -75,7 +75,7 @@
     backdrop-filter: blur(40px);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding: 20px 25px;
-    color: #f6f1f1;
+    color: #f0b9be;
     border-radius: 10px;
     /*padding: 30px 40px;*/
 }
@@ -83,6 +83,7 @@
 .wrap h1 {
     font-size: 36px;
     text-align: center;
+    color: #f8d7da;
 }
 
 .wrap .input-box {
@@ -114,6 +115,7 @@
     top: 50%;
     transform: translateY(-50%);
     font-size: 20px;
+    color: #f8d7da;
 }
 
 .wrap .container {
@@ -177,7 +179,7 @@
 
 /* =============== POS Section =============== */
 .pos-section {
-    display: none;
+    /*display: none;*/
     background-color: var(--bg-main);
     color: var(--text-primary);
     transition: var(--transition);
