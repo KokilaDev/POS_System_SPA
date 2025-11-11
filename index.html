@@ -35,8 +35,48 @@
 
 <!-- POS Section -->
 <div id="pos-section" class="pos-section">
-    <h1>Welcome to POS Dashboard</h1>
-    <p>This is my pos system main page</p>
+    <div class="container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <div class="logo-icon"><i class="fas fa-bolt"></i></div>
+                    <span>POS System</span>
+                </div>
+                <div class="close-sidebar" id="closeSidebar">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+
+            <div class="sidebar-content">
+                <ul class="sidebar-nav">
+                    <li id="dashboard_tab" class="sidebar-nav-item active">
+                        <i class="fas fa-home"></i><span>Dashboard</span>
+                    </li>
+                    <li id="product_tab" class="sidebar-nav-item">
+                        <i class="fas fa-box"></i><span>Products</span>
+                    </li>
+                    <li id="customer_tab" class="sidebar-nav-item">
+                        <i class="fas fa-users"></i><span>Customers</span>
+                    </li>
+                    <li id="cart_tab" class="sidebar-nav-item">
+                        <i class="fas fa-shopping-cart"></i><span>Cart</span>
+                    </li>
+                    <li id="order_tab" class="sidebar-nav-item">
+                        <i class="fas fa-clipboard-list"></i><span>Orders</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sidebar-footer">
+                <button id="logout_btn" class="logout_btn">
+                    <i class="fa-solid fa-right-from-bracket"></i> Logout
+                </button>
+            </div>
+        </aside>
+
+    </div>
 </div>
 
 <script src="asset/lib/jquery-3.7.1.min.js"></script>
