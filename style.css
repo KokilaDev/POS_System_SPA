@@ -629,3 +629,498 @@
     }
 }
 
+/* =============== Customer , Item , Cart , Order =============== */
+.custom h1 {
+    font-size: 1.5rem;
+}
+
+.mb-3 {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Buttons right-aligned */
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Card styling */
+.card {
+    margin: 10px;
+    height: fit-content;
+    gap: 10px;
+    background-color: var(--bg-card);
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    padding: 20px;
+    transition: var(--transition);
+}
+
+/* Form inputs */
+.form-control,
+.form-select,
+textarea {
+    border: none;
+    border-bottom: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 10px;
+    transition: var(--transition);
+}
+
+.form-control:focus,
+.form-select:focus,
+textarea:focus {
+    outline: none;
+    border-bottom-color: var(--primary);
+}
+
+/* Buttons */
+.btn {
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    color: #fff;
+    font-weight: 500;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.btn-success { background: var(--success); }
+.btn-primary { background: var(--primary); }
+.btn-danger  { background: var(--danger); }
+.btn-info    { background: var(--accent); }
+
+.btn:hover { opacity: 0.9; }
+
+/* Dark Mode */
+.dark-mode .card,
+.dark-mode .customers-table {
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+}
+
+.dark-mode .form-control {
+    background-color: #111827;
+    color: #f3f4f6;
+    border-color: var(--border-color);
+}
+
+.dark-mode .table-container thead {
+    background-color: #1f2937;
+    color: var(--text-primary);
+}
+
+.dark-mode .main-content {
+    background-color: var(--bg-main);
+}
+
+/* =============== Customer Page =============== */
+
+/* Layout for form groups */
+.cust-id-name,
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Large screen: row layout */
+@media (min-width: 992px) {
+    .cust-id-name,
+    .contact-info {
+        flex-direction: row;
+        gap: 20px;
+    }
+    .cust-id-name > .mb-3,
+    .contact-info > .mb-3 {
+        flex: 1;
+    }
+}
+
+/* Table styling */
+.recent-customers {
+    margin-top: 20px;
+    margin-left: 10px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: var(--shadow-md);
+    padding: 20px;
+}
+
+.recent-customers h2 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #333;
+}
+
+.recent-customers .table-container {
+    max-height: 218px;
+    overflow-y: auto;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.recent-customers .table-container::-webkit-scrollbar {
+    width: 8px;
+}
+.recent-customers .table-container::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+.customers-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+.customers-table thead {
+    background: #f7f9fb;
+    position: sticky;   /* Keep header visible */
+    top: 0;
+    z-index: 1;
+}
+
+.customers-table th,
+.customers-table td {
+    text-align: left;
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.customers-table th {
+    color: #333;
+    font-weight: 600;
+}
+
+.customers-table tr:hover {
+    background-color: var(--sidebar-active);
+}
+
+/* =============== Product Page =============== */
+
+/* Layout for form groups */
+.pro-id-name,
+.product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Large screen: row layout */
+@media (min-width: 992px) {
+    .pro-id-name,
+    .product-info {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .pro-id-name .mb-3,
+    .product-info .mb-3 {
+        flex: 1;
+    }
+}
+
+/* Table styling */
+.recent-products {
+    margin-top: 20px;
+    margin-left: 10px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: var(--shadow-md);
+    padding: 20px;
+}
+
+.recent-products h2 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #333;
+}
+
+.recent-products .table-container {
+    max-height: 218px;
+    overflow-y: auto;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.recent-products .table-container::-webkit-scrollbar {
+    width: 8px;
+}
+.recent-products .table-container::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+.products-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+.products-table thead {
+    background: #f7f9fb;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.products-table th,
+.products-table td {
+    text-align: left;
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.products-table th {
+    color: #333;
+    font-weight: 600;
+}
+
+.products-table tr:hover {
+    background-color: var(--sidebar-active);
+}
+
+.low-stock {
+    color: var(--danger);
+    font-weight: bold;
+}
+
+.low-stock-row {
+    background-color: #f8d7da; /* light red background */
+}
+
+.low {
+    color: var(--danger);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.normal {
+    color: var(--success);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.empty {
+    color: var(--warning);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* =============== Cart Page =============== */
+.card-cart {
+    margin: 10px;
+    height: 100%;
+    gap: 20px;
+    background-color: var(--bg-card, #fff);
+    border-radius: 12px;
+    box-shadow: var(--shadow-md, 0 2px 8px rgba(0,0,0,0.1));
+    padding: 20px;
+}
+
+/* ===== Form Layout ===== */
+.order-detail,
+.row,
+.order-placement {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+/* Label before input */
+.row label {
+    display: block;
+    font-weight: 600;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Inputs */
+.row input,
+.row select {
+    width: 100%;
+    padding: 8px 10px;
+    margin-right: 10px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.row input:focus,
+.row select:focus {
+    border-color: var(--primary, #007bff);
+    box-shadow: 0 0 5px rgba(0,123,255,0.3);
+}
+
+hr {
+    margin-bottom: 10px;
+    border: none;
+    border-top: 1px solid #eee;
+}
+
+/* ===== Responsive Layout ===== */
+@media (min-width: 992px) {
+    .order-detail,
+    .row,
+    .order-placement {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .order-detail > .mb-3,
+    .row > .mb-3,
+    .order-placement > .mb-3 {
+        flex: 1;
+    }
+}
+
+/* ===== Order Placement Table ===== */
+.order-placement {
+    overflow-y: auto;
+    max-height: 300px; /* scrolls if too many rows */
+    flex-direction: column;
+}
+
+/* ===== Cart Table ===== */
+#cart_table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 300px;
+}
+
+#cart_table thead {
+    background-color: #f0f2f5;
+    color: #333;
+    position: sticky;   /* Keep header visible */
+    top: 0;
+    z-index: 1;
+}
+
+#cart_table th,
+#cart_table td {
+    text-align: left;
+    padding: 8px 10px;
+    border-bottom: 1px solid #eee;
+}
+
+#cart_table th {
+    font-weight: 600;
+}
+
+#cart_table tr:hover {
+    background-color: var(--sidebar-active, #f9fafc);
+}
+
+/* ===== Delete Button ===== */
+#cart_table td .delete-btn {
+    background: var(--danger, #e74c3c);
+    border-radius: 6px;
+    padding: 4px 8px;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+}
+
+#cart_table td .delete-btn:hover {
+    opacity: 0.9;
+}
+
+/* ===== Total Section ===== */
+.order-placement .text-end {
+    align-self: flex-end;
+    text-align: right;
+    margin-top: 20px;
+}
+
+.order-placement .text-end h5 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.order-placement .text-end #total-amount {
+    color: var(--success, #28a745);
+    font-weight: 600;
+}
+
+.order-placement .text-end .cash-label {
+    font-size: 1.2rem;
+    font-weight: bolder;
+    margin-bottom: 10px;
+}
+
+.order-placement .text-end #balance {
+    color: var(--primary, #007bff);
+    font-weight: 600;
+}
+
+/* =============== Order Page =============== */
+
+/* Table styling */
+.recent-order {
+    margin-top: 20px;
+    margin-left: 10px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: var(--shadow-md);
+    padding: 20px;
+}
+
+.recent-order h2 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #333;
+}
+
+.recent-order .table-container {
+    max-height: 490px;
+    overflow-y: auto;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.recent-order .table-container::-webkit-scrollbar {
+    width: 8px;
+}
+.recent-order .table-container::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+.order-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+.order-table thead {
+    background: #f7f9fb;
+    position: sticky;   /* Keep header visible */
+    top: 0;
+    z-index: 1;
+}
+
+.order-table th,
+.order-table td {
+    text-align: left;
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.order-table th {
+    color: #333;
+    font-weight: 600;
+}
+
+.order-table tr:hover {
+    background-color: var(--sidebar-active);
+}

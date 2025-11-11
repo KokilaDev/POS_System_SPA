@@ -160,22 +160,274 @@
 
         <!-- Customers -->
         <main id="customer_content" class="custom main-content tab-content">
-            <h1>Customers</h1>
+            <h1> Customers</h1>
+
+            <!-- customer form -->
+            <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+                <div class="card" style="width: 100%;">
+                    <div class="card-body">
+
+                        <form>
+                            <div class="cust-id-name">
+                                <div class="mb-3">
+                                    <label for="cust_id" class="form-label">Customer ID</label>
+                                    <input type="text" id="cust_id" class="form-control" aria-describedby="id-help" readonly>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="cust_name" class="form-label">Customer Name</label>
+                                    <input type="text" id="cust_name" class="form-control" placeholder="Enter name">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="cust_contact" class="form-label">Contact Number</label>
+                                    <input type="text" id="cust_contact" class="form-control" placeholder="07X-XXX-XXXX">
+                                </div>
+                            </div>
+                            <div class="contact-info">
+                                <div class="mb-3">
+                                    <label for="cust_email" class="form-label">Email</label>
+                                    <input type="email" id="cust_email" class="form-control" placeholder="example@email.com">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="cust_address" class="form-label">Address</label>
+                                    <input type="text" id="cust_address" class="form-control" placeholder="Enter address"></input>
+                                </div>
+                                <div></div>
+                            </div>
+                            <div class="buttons">
+                                <button type="button" class="btn btn-success" id="customer_save_btn">Save</button>
+                                <button type="button" class="btn btn-primary" id="customer_update_btn">Update</button>
+                                <button type="button" class="btn btn-danger" id="customer_delete_btn">Delete</button>
+                                <button type="button" class="btn btn-info" id="customer_reset_btn">Clear</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- customer table -->
+            <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 col-xxl-8">
+
+                <div class="recent-customers">
+                    <div class="section-header">
+                        <h2>Customer List</h2>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="customers-table">
+                            <thead>
+                            <tr>
+                                <th scope="col">Customer ID</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Contact</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Address</th>
+                            </tr>
+                            </thead>
+                            <tbody id="customer_tbl_body">
+                            <!-- Dynamic rows added via JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </main>
 
         <!-- Products -->
         <main id="product_content" class="custom main-content tab-content">
-            <h1>Products</h1>
+            <h1> Products</h1>
+
+            <!-- product form -->
+            <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+                <div class="card" style="width: 100%;">
+                    <div class="card-body">
+
+                        <form>
+                            <div class="pro-id-name">
+                                <div class="mb-3">
+                                    <label for="pro_id" class="form-label">Product Code</label>
+                                    <input type="text" id="pro_id" class="form-control" aria-describedby="id-help" readonly>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="pro_name" class="form-label">Product Name</label>
+                                    <input type="text" id="pro_name" class="form-control" placeholder="Enter name">
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <div class="mb-3">
+                                    <label for="unit_price" class="form-label">Unit Price (Rs.)</label>
+                                    <input type="number" id="unit_price" class="form-control" placeholder="0.00">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="qty_on_hand" class="form-label">Quantity On Hand</label>
+                                    <input type="number" id="qty_on_hand" class="form-control" placeholder="0">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="item_category" class="form-label">Category</label>
+                                    <select id="item_category" class="form-select">
+                                        <option value="" disabled selected hidden> Select Category </option>
+                                        <option value="Jewellery & Accessories">Jewellery & Accessories</option>
+                                        <option value="Hair Accessories">Hair Accessories</option>
+                                        <option value="Cosmetics & Beauty Products">Cosmetics & Beauty Products</option>
+                                        <option value="Gift Items & Souvenirs">Gift Items & Souvenirs</option>
+                                        <option value="Handbags & Purses">Handbags & Purses</option>
+                                    </select>
+                                </div>
+                                <div></div>
+                            </div>
+                            <div class="buttons">
+                                <button type="button" class="btn btn-success" id="product_save_btn">Save</button>
+                                <button type="button" class="btn btn-primary" id="product_update_btn">Update</button>
+                                <button type="button" class="btn btn-danger" id="product_delete_btn">Delete</button>
+                                <button type="button" class="btn btn-info" id="product_reset_btn">Clear</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- product table -->
+            <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 col-xxl-8">
+
+                <div class="recent-products">
+                    <div class="section-header">
+                        <h2>Product List</h2>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="products-table">
+                            <thead>
+                            <tr>
+                                <th scope="col">Product ID</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Unit Price (Rs.)</th>
+                                <th scope="col">Qty On Hand</th>
+                                <th scope="col">Category</th>
+                            </tr>
+                            </thead>
+                            <tbody id="product_tbl_body">
+                            <!-- Dynamic rows added via JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </main>
 
         <!-- Cart -->
         <main id="cart_content" class="custom main-content tab-content">
-            <h1>Cart</h1>
+            <h1> Cart</h1>
+
+            <!-- order form -->
+            <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+                <div class="card card-cart" style="width: 100%;">
+                    <div class="card-body">
+
+                        <form>
+                            <div class="order-detail">
+                                <div class="mb-3">
+                                    <label for="order_id" class="form-label">Order ID</label>
+                                    <input type="text" id="order_id" class="form-control" aria-describedby="id-help" readonly>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="order_date" class="form-label">Order Date</label>
+                                    <input type="date" id="order_date" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="order_customer" class="form-label">Select Customer</label>
+                                    <select id="order_customer" class="form-select">
+                                        <option>Select Customer</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label for="order_item" class="form-label">Select Item</label>
+                                    <select id="order_item" class="form-select">
+                                        <option>Select Item</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="order_price" class="form-label">Unit Price</label>
+                                    <input type="number" id="order_price" class="form-control" placeholder="0.00" readonly>
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="item_quantity" class="form-label">Qty On Hand</label>
+                                    <input type="number" id="item_quantity" class="form-control" placeholder="0" readonly>
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="order_qty" class="form-label">Quantity</label>
+                                    <input type="number" id="order_qty" class="form-control" placeholder="0">
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="order_total" class="form-label">Total</label>
+                                    <input type="number" id="order_total" class="form-control" placeholder="0.00" readonly>
+                                </div>
+                                <div class="col-md-2 d-flex align-items-end">
+                                    <button class="btn btn-primary w-100" id="add_to_cart_btn">Add</button>
+                                </div>
+                            </div>
+                            <div class="order-placement">
+                                <table class="table mt-3" id="cart_table">
+                                    <thead>
+                                    <tr>
+                                        <th>Item</th>
+                                        <th>Qty</th>
+                                        <th>Price</th>
+                                        <th>Total</th>
+                                        <th>Action</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+
+                                <div class="text-end mt-3">
+                                    <h5>Total Amount: Rs. <span id="total-amount">0.00</span></h5>
+                                    <div class="cash">
+                                        <label for="cash" class="cash-label"> Cash Rs.</label>
+                                        <input type="text" id="cash" class="form-control" placeholder="0.00">
+                                    </div>
+                                    <h5>Balance: Rs. <span id="balance">0.00</span></h5>
+                                    <button type="button" class="btn btn-success" id="place_order_btn">Place Order</button>
+                                    <button type="button" class="btn btn-danger" id="order_cancel_btn">Cancel</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
         </main>
 
         <!-- Orders -->
         <main id="order_content" class="custom main-content tab-content">
-            <h1>Orders</h1>
+            <h1> Orders</h1>
+
+            <!-- order table -->
+            <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 col-xxl-8">
+
+                <div class="recent-order">
+                    <div class="table-container">
+                        <table class="order-table">
+                            <thead>
+                            <tr>
+                                <th scope="col">Order ID</th>
+                                <th scope="col">Customer Name</th>
+                                <th scope="col">Order Date</th>
+                                <th scope="col">Total (Rs.)</th>
+                            </tr>
+                            </thead>
+                            <tbody id="order_tbl_body">
+                            <!-- dynamic order rows will be added here via JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
         </main>
 
     </div>
