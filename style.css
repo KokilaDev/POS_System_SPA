@@ -179,7 +179,7 @@
 
 /* =============== POS Section =============== */
 .pos-section {
-    /*display: none;*/
+    display: none;
     background-color: var(--bg-main);
     color: var(--text-primary);
     transition: var(--transition);
