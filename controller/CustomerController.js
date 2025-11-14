@@ -1,5 +1,5 @@
-import {CustomerModel} from "../model/CustomerModel.js";
-import {validEmail, validMobile} from "../util/Validation.js";
+import { CustomerModel } from "../model/CustomerModel.js";
+import { validEmail, validMobile } from "../util/Validation.js";
 
 let selectedCustomerIndex;
 

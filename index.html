@@ -9,29 +9,29 @@
 <body>
 
 <!-- Login Section -->
-<div class="login">
-    <div class="wrap" id="wrap">
-        <form id="login-form">
-            <h1>Login</h1>
-            <div class="input-box">
-                <input type="text" placeholder="Username" required id="username">
-                <i class="fa-solid fa-user"></i>
-            </div>
-            <div class="input-box">
-                <input type="password" placeholder="Password" required id="password">
-                <i class="fa-solid fa-lock"></i>
-            </div>
-            <div class="container">
-                <label><input type="checkbox"> Remember me</label>
-                <a href="#">Forgot Password?</a>
-            </div>
-            <button type="submit" class="btn" id="btn">Login</button>
-            <div class="register">
-                <p>Don't have an account? <a href="#">Register</a></p>
-            </div>
-        </form>
-    </div>
-</div>
+<!--<div class="login">-->
+<!--    <div class="wrap" id="wrap">-->
+<!--        <form id="login-form">-->
+<!--            <h1>Login</h1>-->
+<!--            <div class="input-box">-->
+<!--                <input type="text" placeholder="Username" required id="username">-->
+<!--                <i class="fa-solid fa-user"></i>-->
+<!--            </div>-->
+<!--            <div class="input-box">-->
+<!--                <input type="password" placeholder="Password" required id="password">-->
+<!--                <i class="fa-solid fa-lock"></i>-->
+<!--            </div>-->
+<!--            <div class="container">-->
+<!--                <label><input type="checkbox"> Remember me</label>-->
+<!--                <a href="#">Forgot Password?</a>-->
+<!--            </div>-->
+<!--            <button type="submit" class="btn" id="btn">Login</button>-->
+<!--            <div class="register">-->
+<!--                <p>Don't have an account? <a href="#">Register</a></p>-->
+<!--            </div>-->
+<!--        </form>-->
+<!--    </div>-->
+<!--</div>-->
 
 <!-- POS Section -->
 <div id="pos-section" class="pos-section">
@@ -346,7 +346,7 @@
                                 <div class="col-md-4">
                                     <label for="order_item" class="form-label">Select Item</label>
                                     <select id="order_item" class="form-select">
-                                        <option>Select Item</option>
+                                        <option value="" disabled selected hidden>Select Item</option>
                                     </select>
                                 </div>
                                 <div class="col-md-2">
@@ -380,9 +380,10 @@
                                         <th>Action</th>
                                     </tr>
                                     </thead>
-                                    <tbody></tbody>
+                                    <tbody id="cart_table_body"></tbody>
                                 </table>
-
+                            </div>
+                            <div class="placed_order">
                                 <div class="text-end mt-3">
                                     <h5>Total Amount: Rs. <span id="total-amount">0.00</span></h5>
                                     <div class="cash">
@@ -439,6 +440,8 @@
 
 <script type="module" src="controller/CustomerController.js"></script>
 <script type="module" src="controller/ItemController.js"></script>
+<script type="module" src="controller/CartController.js"></script>
+<script type="module" src="controller/OrderController.js"></script>
 
 </body>
 </html>
