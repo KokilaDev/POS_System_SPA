@@ -92,6 +92,7 @@ $("#product_save_btn").on("click", function () {
     }
 
     ItemModel.addItem(name, unit_price, qty_on_hand, category);
+    $(document).trigger("itemAdded");
     loadItemTable();
     updateLowStockItems();
 

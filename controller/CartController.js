@@ -2,8 +2,17 @@ import { CartModel } from "../model/CartModel.js";
 import {cart_db, item_db, customer_db, order_db} from "../db/DB.js";
 import OrderDTO from "../dto/OrderDTO.js";
 import {OrderModel} from "../model/OrderModel.js";
+import {ItemModel} from "../model/ItemModel.js";
+import {CustomerModel} from "../model/CustomerModel.js";
 
 $(document).ready(function () {
+    $(document).on("itemAdded", function () {
+        loadItems();  // Refresh dropdown
+    });
+
+    $(document).on("customerAdded", function () {
+        loadCustomers(); // Refresh dropdown
+    });
 
     // Set Order ID
     $("#order_id").val(CartModel.generateOrderId());
@@ -155,7 +164,7 @@ function loadItems() {
     const select = $("#order_item");
     select.empty();
     select.append(`<option value="" disabled selected hidden>Select Item</option>`);
-    item_db.forEach(item => {
+    ItemModel.getAllItems().forEach(item => {
         select.append(`<option value="${item._item_code}">${item._item_name}</option>`);
     });
 }
@@ -165,7 +174,7 @@ function loadCustomers() {
     const select = $("#order_customer");
     select.empty();
     select.append(`<option value="" disabled selected hidden>Select Customer</option>`);
-    customer_db.forEach(customer => {
+    CustomerModel.getAllCustomers().forEach(customer => {
         select.append(`<option value="${customer._customer_id}">${customer._customer_name}</option>`);
     });
 }

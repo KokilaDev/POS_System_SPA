@@ -50,6 +50,7 @@ $("#customer_save_btn").on("click", function () {
     if (!address) return Swal.fire({ icon: "error", text: "Address required" });
 
     CustomerModel.addCustomer(name, contact, email, address);
+    $(document).trigger("customerAdded");
     loadCustomerTable();
     updateTotalCustomersCount();
 
