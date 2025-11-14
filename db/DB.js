@@ -1,21 +1,27 @@
 let customer_db = [
-    { _customer_id: "C001", _customer_name: "Kokila Dewmini", _contact: "0711234567", _email: "kokila@gmail.com", _address: "Colombo 03" },
+    { _customer_id: "C001", _customer_name: "Kokila Dewmini", _contact: "0711234567", _email: "kokila@gmail.com", _address: "Colombo" },
     { _customer_id: "C002", _customer_name: "Adeepa Bimsara", _contact: "0779876543", _email: "adeepa@gmail.com", _address: "Kandy" },
-    { _customer_id: "C003", _customer_name: "Samanthi Fernando", _contact: "0712345678", _email: "samanthi.f@gmail.com", _address: "Galle" },
-    { _customer_id: "C004", _customer_name: "Chathura Silva", _contact: "0763456789", _email: "chathura.s@gmail.com", _address: "Negombo" },
-    { _customer_id: "C005", _customer_name: "Iresha Jayasinghe", _contact: "0754567890", _email: "iresha.j@gmail.com", _address: "Matara" }
+    { _customer_id: "C003", _customer_name: "Nimesh Perera", _contact: "0758854123", _email: "nimesh@gmail.com", _address: "Galle" },
+    { _customer_id: "C004", _customer_name: "Samanthi Silva", _contact: "0714589632", _email: "samanthi@gmail.com", _address: "Negombo" },
+    { _customer_id: "C005", _customer_name: "Tharindu Jayasuriya", _contact: "0769954221", _email: "tharindu@gmail.com", _address: "Matara" }
 ];
 
 let item_db = [
-    { _item_code: 'P001', _item_name: 'Crystal Hair Clip', _unit_price: 250, _qty_on_hand: 12, _category: 'Jewellery & Accessories' },
-    { _item_code: 'P002', _item_name: 'Beaded Necklace', _unit_price: 1200, _qty_on_hand: 5, _category: 'Jewellery & Accessories' },
-    { _item_code: 'P003', _item_name: 'Ladies Handbag', _unit_price: 3250, _qty_on_hand: 8, _category: 'Handbags & Purses' },
-    { _item_code: 'P004', _item_name: 'Stylish Sunglasses', _unit_price: 1800, _qty_on_hand: 15, _category: 'Jewellery & Accessories' },
-    { _item_code: 'P005', _item_name: 'Silver Earrings', _unit_price: 950, _qty_on_hand: 3, _category: 'Jewellery & Accessories' }
+    { _item_code: "I001", _item_name: "Bananas", _unit_price: 380, _qty_on_hand: 50, _category: "Fruits & Vegetables" },
+    { _item_code: "I002", _item_name: "Fresh Milk 1L", _unit_price: 420, _qty_on_hand: 30, _category: "Dairy & Eggs" },
+    { _item_code: "I003", _item_name: "Orange Juice", _unit_price: 750, _qty_on_hand: 25, _category: "Beverages" },
+    { _item_code: "I004", _item_name: "Chocolate Cookies", _unit_price: 600, _qty_on_hand: 40, _category: "Snacks & Confectionery" },
+    { _item_code: "I005", _item_name: "Red Lentils (Dhal)", _unit_price: 350, _qty_on_hand: 60, _category: "Grains & Pulses" }
 ];
 
 let cart_db = [];
 
-let order_db = [];
+let order_db = [
+    { _order_id: "O001", _customer_name: "Kokila Dewmini", _order_date: "2025-11-14", _total: 3010 },
+    { _order_id: "O002", _customer_name: "Adeepa Bimsara", _order_date: "2025-11-13", _total: 1800 },
+    { _order_id: "O003", _customer_name: "Nimesh Perera", _order_date: "2025-11-12", _total: 2200 },
+    { _order_id: "O004", _customer_name: "Samanthi Silva", _order_date: "2025-11-11", _total: 1450 },
+    { _order_id: "O005", _customer_name: "Tharindu Jayasuriya", _order_date: "2025-11-10", _total: 3200 }
+];
 
 export {customer_db, item_db, cart_db, order_db};

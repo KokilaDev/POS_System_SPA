@@ -179,7 +179,7 @@
 
 /* =============== POS Section =============== */
 .pos-section {
-    /*display: none;*/
+    display: none;
     background-color: var(--bg-main);
     color: var(--text-primary);
     transition: var(--transition);
@@ -511,73 +511,76 @@
     margin-right: 0.25rem;
 }
 
-.recent-orders {
-    margin-top: 30px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    padding: 20px;
+.charts-section {
+    display: flex;
+    gap: 20px;
 }
 
-/* Title */
-.recent-orders h2 {
-    margin-bottom: 15px;
+.chart {
+    background: #fff;
+    flex: 1;
+    padding: 20px;
+    border-radius: 8px;
+    height: 325px;
     font-size: 20px;
+    font-weight: 600;
     color: #333;
 }
 
-/* Scrollable Table Container */
-.recent-orders .table-container {
-    max-height: 240px;
-    overflow-y: auto;
-    border-radius: 8px;
-    border: 1px solid #eee;
-}
-
-/* Optional: Nice Scrollbar */
-.recent-orders .table-container::-webkit-scrollbar {
-    width: 8px;
-}
-.recent-orders .table-container::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 4px;
-}
-
-/* Table Base */
-.orders-table {
+.category-table {
     width: 100%;
+    margin-top: 10px;
     border-collapse: collapse;
-    min-width: 600px;
+    table-layout: fixed;
 }
 
-/* Header Styling */
-.orders-table thead {
+.category-table thead {
     background: #f7f9fb;
-    position: sticky;   /* 👈 Keep header visible */
+    position: sticky;   /* Keep header visible */
     top: 0;
     z-index: 1;
 }
 
-.orders-table th,
-.orders-table td {
-    text-align: left;
+/* Scrollable tbody */
+.category-table tbody {
+    display: block;
+    max-height: 200px; /* scrollable height */
+    overflow-y: auto;
+}
+
+/* Fixed thead */
+.category-table thead,
+.category-table tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+/* Style for header */
+.category-table thead {
+    background: #f7f9fb;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+.category-table th,
+.category-table td {
+    text-align: start;
+    font-size: 15px;
     padding: 12px 15px;
     border-bottom: 1px solid #eee;
 }
 
-.orders-table th {
+.category-table th {
     color: #333;
+    font-size: 16px;
     font-weight: 600;
 }
 
-.orders-table tr:hover {
-    background: #f1f5ff;
+.category-table tr:hover {
+    background-color: var(--sidebar-active);
 }
-
-/* Status Colors */
-.completed { color: #28a745; font-weight: 600; }
-.pending { color: #ff9800; font-weight: 600; }
-.cancelled { color: #e53935; font-weight: 600; }
 
 /* Responsive */
 @media (max-width: 1200px) {

@@ -9,29 +9,29 @@
 <body>
 
 <!-- Login Section -->
-<!--<div class="login">-->
-<!--    <div class="wrap" id="wrap">-->
-<!--        <form id="login-form">-->
-<!--            <h1>Login</h1>-->
-<!--            <div class="input-box">-->
-<!--                <input type="text" placeholder="Username" required id="username">-->
-<!--                <i class="fa-solid fa-user"></i>-->
-<!--            </div>-->
-<!--            <div class="input-box">-->
-<!--                <input type="password" placeholder="Password" required id="password">-->
-<!--                <i class="fa-solid fa-lock"></i>-->
-<!--            </div>-->
-<!--            <div class="container">-->
-<!--                <label><input type="checkbox"> Remember me</label>-->
-<!--                <a href="#">Forgot Password?</a>-->
-<!--            </div>-->
-<!--            <button type="submit" class="btn" id="btn">Login</button>-->
-<!--            <div class="register">-->
-<!--                <p>Don't have an account? <a href="#">Register</a></p>-->
-<!--            </div>-->
-<!--        </form>-->
-<!--    </div>-->
-<!--</div>-->
+<div class="login">
+    <div class="wrap" id="wrap">
+        <form id="login-form">
+            <h1>Login</h1>
+            <div class="input-box">
+                <input type="text" placeholder="Username" required id="username">
+                <i class="fa-solid fa-user"></i>
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="Password" required id="password">
+                <i class="fa-solid fa-lock"></i>
+            </div>
+            <div class="container">
+                <label><input type="checkbox"> Remember me</label>
+                <a href="#">Forgot Password?</a>
+            </div>
+            <button type="submit" class="btn" id="btn">Login</button>
+            <div class="register">
+                <p>Don't have an account? <a href="#">Register</a></p>
+            </div>
+        </form>
+    </div>
+</div>
 
 <!-- POS Section -->
 <div id="pos-section" class="pos-section">
@@ -91,7 +91,7 @@
                         <div class="stat-title">Total Revenue</div>
                         <div class="stat-icon primary"><i class="fas fa-dollar-sign"></i></div>
                     </div>
-                    <div class="stat-value"><span>Rs.</span>0.00</div>
+                    <div class="stat-value" id="total_revenue"><span>Rs.</span>0.00</div>
                     <div class="stat-change positive">
                         <i class="fas fa-arrow-up"></i><span>0% from last month</span>
                     </div>
@@ -113,7 +113,7 @@
                         <div class="stat-title">Total Orders</div>
                         <div class="stat-icon success"><i class="fas fa-shopping-bag"></i></div>
                     </div>
-                    <div class="stat-value">0</div>
+                    <div class="stat-value" id="total_orders">0</div>
                     <div class="stat-change positive">
                         <i class="fas fa-arrow-up"></i><span>0% from last month</span>
                     </div>
@@ -133,25 +133,28 @@
                 </div>
             </div>
 
-            <!-- Recent Orders Table -->
-            <div class="recent-orders">
-                <div class="section-header">
-                    <h2>Recent Orders</h2>
+            <div class="charts-section">
+                <div class="chart" id="sales-chart">
+                    <div>Sales</div>
+                    <canvas id="salesChart"></canvas>
                 </div>
-
-                <div class="table-container">
-                    <table class="orders-table">
+                <div class="chart" id="categoryChart">
+                    <div>Categories</div>
+                    <table id="categoryTable" class="category-table">
                         <thead>
                         <tr>
-                            <th>Order ID</th>
-                            <th>Customer</th>
-                            <th>Date</th>
-                            <th>Status</th>
-                            <th>Total (Rs.)</th>
+                            <th>Category Name</th>
+                            <th>Number of Items</th>
                         </tr>
                         </thead>
-                        <tbody id="recentOrdersBody">
-                        <!-- Filled dynamically via JS -->
+                        <tbody id="category-table-body">
+                        <tr><td>Fruits & Vegetables</td><td id="count-fruits">0</td></tr>
+                        <tr><td>Dairy & Eggs</td><td id="count-dairy">0</td></tr>
+                        <tr><td>Beverages</td><td id="count-beverages">0</td></tr>
+                        <tr><td>Snacks & Confectionery</td><td id="count-snacks">0</td></tr>
+                        <tr><td>Household Essentials</td><td id="count-household">0</td></tr>
+                        <tr><td>Grains & Pulses</td><td id="count-grains">0</td></tr>
+                        <tr><td>Spices & Seasonings</td><td id="count-spices">0</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -266,11 +269,13 @@
                                     <label for="item_category" class="form-label">Category</label>
                                     <select id="item_category" class="form-select">
                                         <option value="" disabled selected hidden> Select Category </option>
-                                        <option value="Jewellery & Accessories">Jewellery & Accessories</option>
-                                        <option value="Hair Accessories">Hair Accessories</option>
-                                        <option value="Cosmetics & Beauty Products">Cosmetics & Beauty Products</option>
-                                        <option value="Gift Items & Souvenirs">Gift Items & Souvenirs</option>
-                                        <option value="Handbags & Purses">Handbags & Purses</option>
+                                        <option value="Fruits & Vegetables">Fruits & Vegetables</option>
+                                        <option value="Dairy & Eggs">Dairy & Eggs</option>
+                                        <option value="Beverages">Beverages</option>
+                                        <option value="Snacks & Confectionery">Snacks & Confectionery</option>
+                                        <option value="Household Essentials">Household Essentials</option>
+                                        <option value="Grains & Pulses">Grains & Pulses</option>
+                                        <option value="Spices & Seasonings">Spices & Seasonings</option>
                                     </select>
                                 </div>
                                 <div></div>
@@ -436,6 +441,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="asset/lib/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="script.js"></script>
 
 <script type="module" src="controller/CustomerController.js"></script>

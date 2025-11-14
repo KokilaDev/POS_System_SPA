@@ -11,6 +11,9 @@ $(document).ready(function () {
     // Load Items and Customers
     loadItems();
     loadCustomers();
+    loadOrderTable();
+    updateTotalOrdersCount();
+    calculateTotalRevenue();
 
     // Item selection → auto-fill price & quantity
     $("#order_item").on("change", function () {
@@ -93,6 +96,8 @@ $(document).ready(function () {
 
         // Update order table in Orders tab
         loadOrderTable();
+        updateTotalOrdersCount();
+        calculateTotalRevenue();
 
         CartModel.clearCart();
         updateCartTable();
@@ -197,6 +202,21 @@ function updateCartTable() {
 function updateTotal() {
     const total = CartModel.calculateTotal();
     $("#total-amount").text(total.toFixed(2));
+}
+
+function updateTotalOrdersCount() {
+    $("#total_orders").text(OrderModel.getOrderCount());
+}
+
+function calculateTotalRevenue() {
+    let totalRevenue = 0;
+
+    order_db.forEach(order => {
+        totalRevenue += Number(order._total);
+    });
+
+    // Format with two decimals
+    document.getElementById("total_revenue").innerHTML = `<span>Rs.</span>${totalRevenue.toFixed(2)}`;
 }
 
 function loadOrderTable() {

@@ -7,6 +7,7 @@ $(document).ready(function () {
     $("#pro_id").val(ItemModel.generateItemId());
     updateLowStockItems();
     loadItemTable();
+    updateCategoryChart()
 });
 
 /* ================== Load Table ================== */
@@ -187,3 +188,33 @@ $("#product_reset_btn").on("click", function () {
     $("#pro_id").val(ItemModel.generateItemId());
     selectedItemIndex = undefined;
 });
+
+// ====== Category Chart ======
+function updateCategoryChart() {
+    // Initialize counts
+    const counts = {
+        "Fruits & Vegetables": 0,
+        "Dairy & Eggs": 0,
+        "Beverages": 0,
+        "Snacks & Confectionery": 0,
+        "Household Essentials": 0,
+        "Grains & Pulses": 0,
+        "Spices & Seasonings": 0
+    };
+
+    // Count items per category
+    ItemModel.getAllItems().forEach(item => {
+        if (counts[item._category] !== undefined) {
+            counts[item._category]++;
+        }
+    });
+
+    // Update table counts dynamically
+    document.getElementById("count-fruits").textContent = counts["Fruits & Vegetables"];
+    document.getElementById("count-dairy").textContent = counts["Dairy & Eggs"];
+    document.getElementById("count-beverages").textContent = counts["Beverages"];
+    document.getElementById("count-snacks").textContent = counts["Snacks & Confectionery"];
+    document.getElementById("count-household").textContent = counts["Household Essentials"];
+    document.getElementById("count-grains").textContent = counts["Grains & Pulses"];
+    document.getElementById("count-spices").textContent = counts["Spices & Seasonings"];
+}
