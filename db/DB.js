@@ -7,11 +7,11 @@ let customer_db = [
 ];
 
 let item_db = [
-    { _item_code: "I001", _item_name: "Bananas", _unit_price: 380, _qty_on_hand: 50, _category: "Fruits & Vegetables" },
-    { _item_code: "I002", _item_name: "Fresh Milk 1L", _unit_price: 420, _qty_on_hand: 30, _category: "Dairy & Eggs" },
-    { _item_code: "I003", _item_name: "Orange Juice", _unit_price: 750, _qty_on_hand: 25, _category: "Beverages" },
-    { _item_code: "I004", _item_name: "Chocolate Cookies", _unit_price: 600, _qty_on_hand: 40, _category: "Snacks & Confectionery" },
-    { _item_code: "I005", _item_name: "Red Lentils (Dhal)", _unit_price: 350, _qty_on_hand: 60, _category: "Grains & Pulses" }
+    { _item_code: "P001", _item_name: "Bananas", _unit_price: 380, _qty_on_hand: 50, _category: "Fruits & Vegetables" },
+    { _item_code: "P002", _item_name: "Fresh Milk 1L", _unit_price: 420, _qty_on_hand: 30, _category: "Dairy & Eggs" },
+    { _item_code: "P003", _item_name: "Orange Juice", _unit_price: 750, _qty_on_hand: 25, _category: "Beverages" },
+    { _item_code: "P004", _item_name: "Chocolate Cookies", _unit_price: 600, _qty_on_hand: 40, _category: "Snacks & Confectionery" },
+    { _item_code: "P005", _item_name: "Red Lentils (Dhal)", _unit_price: 350, _qty_on_hand: 60, _category: "Grains & Pulses" }
 ];
 
 let cart_db = [];

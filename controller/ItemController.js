@@ -103,6 +103,10 @@ $("#product_save_btn").on("click", function () {
 
 /* ================== Select Row ================== */
 $("#product_tbl_body").on("click", "tr", function () {
+
+    $("#product_tbl_body tr").removeClass("selected");
+    $(this).addClass("selected");
+
     selectedItemIndex = $(this).data("index");
     let item = ItemModel.getAllItems()[selectedItemIndex];
 

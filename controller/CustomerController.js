@@ -60,10 +60,30 @@ $("#customer_save_btn").on("click", function () {
 });
 
 /* ================== Select Row ================== */
+// $("#customer_tbl_body").on("click", "tr", function () {
+//     selectedCustomerIndex = $(this).data("index");
+//     let customer = CustomerModel.getAllCustomers()[selectedCustomerIndex];
+//
+//     $("#cust_id").val(customer._customer_id);
+//     $("#cust_name").val(customer._customer_name);
+//     $("#cust_contact").val(customer._contact);
+//     $("#cust_email").val(customer._email);
+//     $("#cust_address").val(customer._address);
+// });
+
 $("#customer_tbl_body").on("click", "tr", function () {
+
+    // Remove selected class from all rows
+    $("#customer_tbl_body tr").removeClass("selected");
+
+    // Add selected class to clicked row
+    $(this).addClass("selected");
+
+    // Get row index
     selectedCustomerIndex = $(this).data("index");
     let customer = CustomerModel.getAllCustomers()[selectedCustomerIndex];
 
+    // Auto-fill form fields
     $("#cust_id").val(customer._customer_id);
     $("#cust_name").val(customer._customer_name);
     $("#cust_contact").val(customer._contact);

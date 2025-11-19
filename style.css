@@ -24,6 +24,7 @@
     --border-color: #e2e8f0;
     --sidebar-bg: #ffffff;
     --sidebar-active: rgba(8, 102, 255, 0.1);
+    --sidebar-selected: rgba(8, 102, 255, 0.3);
 
     /* Shadows */
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -578,7 +579,11 @@
     font-weight: 600;
 }
 
-.category-table tr:hover {
+.category-table tr:hover , .category-table tr:focus {
+    background-color: var(--sidebar-active);
+}
+
+.category-table tr.active {
     background-color: var(--sidebar-active);
 }
 
@@ -803,8 +808,12 @@ textarea:focus {
     font-weight: 600;
 }
 
-.customers-table tr:hover {
-    background-color: var(--sidebar-active);
+.customers-table tr:hover  {
+    background-color: var(--sidebar-active) !important;
+}
+
+.customers-table tr.selected {
+    background-color: var(--sidebar-selected) !important;
 }
 
 /* =============== Product Page =============== */
@@ -888,7 +897,11 @@ textarea:focus {
 }
 
 .products-table tr:hover {
-    background-color: var(--sidebar-active);
+    background-color: var(--sidebar-active) !important;
+}
+
+.products-table tr.selected {
+    background-color: var(--sidebar-selected) !important;
 }
 
 .low-stock {
@@ -1026,6 +1039,10 @@ hr {
     background-color: var(--sidebar-active, #f9fafc);
 }
 
+#cart_table tr.active {
+    background-color: var(--sidebar-active, #f9fafc);
+}
+
 /* ===== Delete Button ===== */
 #cart_table td .delete-btn {
     background: var(--danger, #e74c3c);
@@ -1127,5 +1144,9 @@ hr {
 }
 
 .order-table tr:hover {
+    background-color: var(--sidebar-active);
+}
+
+.order-table tr.active {
     background-color: var(--sidebar-active);
 }
