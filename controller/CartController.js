@@ -4,6 +4,7 @@ import OrderDTO from "../dto/OrderDTO.js";
 import {OrderModel} from "../model/OrderModel.js";
 import {ItemModel} from "../model/ItemModel.js";
 import {CustomerModel} from "../model/CustomerModel.js";
+import {loadItemTable} from "./ItemController.js";
 
 $(document).ready(function () {
     $(document).on("itemAdded", function () {
@@ -104,6 +105,7 @@ $(document).ready(function () {
         });
 
         // Update order table in Orders tab
+        loadItemTable();
         loadOrderTable();
         updateTotalOrdersCount();
         calculateTotalRevenue();

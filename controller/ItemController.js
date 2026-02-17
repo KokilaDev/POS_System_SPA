@@ -11,7 +11,7 @@ $(document).ready(function () {
 });
 
 /* ================== Load Table ================== */
-function loadItemTable() {
+export function loadItemTable() {
     $("#product_tbl_body").empty();
     ItemModel.getAllItems().forEach((item, index) => {
         // Quantity < 10 => red text + row highlight
